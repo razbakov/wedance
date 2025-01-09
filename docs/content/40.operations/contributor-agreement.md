@@ -78,13 +78,15 @@ You agree to:
 - Not disclose non-public Project information
 - Use official channels for Project communication
 
-## 7. Recognition
+## 7. Recognition and Compensation
 
 We will:
 
 - Maintain attribution of your Contributions
 - Include you in our contributors list
 - Respect your right to be identified as a contributor
+- Value your time contributions as monetary investment according to our [Profit Distribution Policy](/docs/content/30.governance/decisions/003-profit-distribution.md)
+- Provide Cursor IDE license for active contributors
 
 ## 8. Disclaimer
 
