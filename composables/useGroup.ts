@@ -6,7 +6,9 @@ export const useGroup = () => {
   const route = useRoute()
   const groupId = route.params.id as string
 
-  const group = computed(() => getMockOrganizers().find((o) => o.id === groupId))
+  const group = computed(() =>
+    getMockOrganizers().find((o) => o.id === groupId)
+  )
 
   return {
     group,
