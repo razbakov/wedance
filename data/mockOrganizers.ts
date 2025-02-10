@@ -1,4 +1,4 @@
-import { type Organizer, validateOrganizers } from '~/schemas/organizers'
+import { type Organizer } from '~/schemas/organizers'
 
 export const danceStyles = [
   { value: 'salsa', label: 'Salsa' },
@@ -19,7 +19,7 @@ export const eventTypes = [
   { value: 'performances', label: 'Performances' },
 ]
 
-const mockOrganizers = [
+const organizersData: Organizer[] = [
   {
     id: '1',
     name: 'Berlin Salsa Community',
@@ -34,14 +34,16 @@ const mockOrganizers = [
     eventCount: 45,
     links: {
       whatsapp: 'https://chat.whatsapp.com/...',
-      instagram: '@berlinsalsa',
-      facebook: 'Berlin Salsa Community (3.5k members)',
+      instagram: 'https://instagram.com/berlinsalsa',
+      facebook: 'https://facebook.com/groups/berlinsalsa',
       website: 'https://salsaberlin.de',
     },
     features: {
       eventCalendar: true,
       photoGallery: true,
       communityUpdates: true,
+      memberDirectory: true,
+      discussionBoard: true
     },
     privacy: 'public',
     admins: ['admin1', 'admin2'],
@@ -61,14 +63,16 @@ const mockOrganizers = [
     bio: 'Weekly swing dance classes and social dances. Follow us on Instagram for latest updates and join our Telegram channel.',
     eventCount: 32,
     links: {
-      telegram: 't.me/swingparis',
-      instagram: '@swingdanceparis',
-      facebook: 'Swing Dance Paris Official (2.8k members)',
+      telegram: 'https://t.me/swingparis',
+      instagram: 'https://instagram.com/swingdanceparis',
+      facebook: 'https://facebook.com/groups/swingdanceparis',
     },
     features: {
       eventCalendar: true,
       photoGallery: true,
       communityUpdates: true,
+      memberDirectory: true,
+      discussionBoard: true
     },
     privacy: 'public',
     admins: ['admin3', 'admin4'],
@@ -89,9 +93,20 @@ const mockOrganizers = [
     eventCount: 128,
     links: {
       whatsapp: 'https://chat.whatsapp.com/...',
-      instagram: '@tangoba',
+      instagram: 'https://instagram.com/tangoba',
       website: 'https://tangobuenosaires.org',
     },
+    features: {
+      eventCalendar: true,
+      photoGallery: true,
+      communityUpdates: true,
+      memberDirectory: true,
+      discussionBoard: true
+    },
+    privacy: 'public',
+    admins: ['admin5', 'admin6'],
+    mission: 'Promoting tango culture in Buenos Aires',
+    regularActivities: ['Daily milongas', 'Tango shows', 'Practice sessions'],
   },
   {
     id: '4',
@@ -106,10 +121,21 @@ const mockOrganizers = [
     bio: 'Contemporary dance community in NYC. Join our Discord for class schedules and practice sessions.',
     eventCount: 67,
     links: {
-      discord: 'discord.gg/nycurbandance',
-      instagram: '@nycurbandance',
-      facebook: 'NYC Urban Dance Community (5k members)',
+      discord: 'https://discord.gg/nycurbandance',
+      instagram: 'https://instagram.com/nycurbandance',
+      facebook: 'https://facebook.com/groups/nycurbandance',
     },
+    features: {
+      eventCalendar: true,
+      photoGallery: true,
+      communityUpdates: true,
+      memberDirectory: true,
+      discussionBoard: true
+    },
+    privacy: 'public',
+    admins: ['admin7', 'admin8'],
+    mission: 'Advancing contemporary dance in NYC',
+    regularActivities: ['Weekly classes', 'Performances', 'Workshops'],
   },
   {
     id: '5',
@@ -125,10 +151,21 @@ const mockOrganizers = [
     eventCount: 89,
     links: {
       whatsapp: 'https://chat.whatsapp.com/...',
-      instagram: '@riozouk',
-      facebook: 'Rio Zouk Official (4.2k members)',
+      instagram: 'https://instagram.com/riozouk',
+      facebook: 'https://facebook.com/groups/riozouk',
       website: 'https://riozouk.com.br',
     },
+    features: {
+      eventCalendar: true,
+      photoGallery: true,
+      communityUpdates: true,
+      memberDirectory: true,
+      discussionBoard: true
+    },
+    privacy: 'public',
+    admins: ['admin9', 'admin10'],
+    mission: 'Spreading Brazilian Zouk worldwide',
+    regularActivities: ['Daily classes', 'Weekend parties', 'Workshops'],
   },
   {
     id: '6',
@@ -144,15 +181,24 @@ const mockOrganizers = [
     eventCount: 54,
     links: {
       whatsapp: 'https://chat.whatsapp.com/...',
-      telegram: 't.me/kizombalisboa',
-      instagram: '@kizombalisboa',
-      facebook: 'Kizomba Lisboa (3.1k members)',
+      telegram: 'https://t.me/kizombalisboa',
+      instagram: 'https://instagram.com/kizombalisboa',
+      facebook: 'https://facebook.com/groups/kizombalisboa',
     },
+    features: {
+      eventCalendar: true,
+      photoGallery: true,
+      communityUpdates: true,
+      memberDirectory: true,
+      discussionBoard: true
+    },
+    privacy: 'public',
+    admins: ['admin11', 'admin12'],
+    mission: 'Preserving authentic Kizomba culture',
+    regularActivities: ['Beach dance events', 'Workshops', 'Social parties'],
   },
 ]
 
-export const getMockOrganizers = (): Organizer[] => {
-  return validateOrganizers(mockOrganizers)
-}
+export const mockOrganizers = organizersData
 
 export type { Organizer } from '~/schemas/organizers'
